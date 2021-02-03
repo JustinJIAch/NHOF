@@ -12,6 +12,107 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_code",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_info",
+						"type": "string"
+					}
+				],
+				"name": "ChangeSeatInfoByCode",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_code",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "ChangeSeatOwnerByCode",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_info",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "code",
+						"type": "uint256"
+					}
+				],
+				"name": "InductedIntoHOF",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "SetMinter",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint96",
+						"name": "amount",
+						"type": "uint96"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
 				"constant": true,
 				"inputs": [
 					{
@@ -329,10 +430,10 @@
 	},
 	"sources": {
 		"localhost/NewHallOfFame.sol": {
-			"keccak256": "0x542823369f39ccb6f828f8b010389577b5abb37c5db0a641cf289ca8b6be23d0",
+			"keccak256": "0xbc8642fda113b19a21bda894139cc0336ae23cc0a86f46f1c51c7536d348f065",
 			"urls": [
-				"bzz-raw://d0cadba8e16cf4be063af332f0a02dab7fd4036d5d06d5d6ce0abe35d10ba04e",
-				"dweb:/ipfs/QmR7d62CUk3hr5Wz2RrWamdAcJUh5U7gcZQWNNcG3SYeox"
+				"bzz-raw://b372297f374d659585ca1d1db0fc60f3f2d65b57718541543446a8284d1f9473",
+				"dweb:/ipfs/QmRR3ELocKFVmuYxE7Vjms9oRtkBt9ocRkprBXttMoZD36"
 			]
 		}
 	},

@@ -22,6 +22,13 @@ contract NHOF {
     mapping (address => uint96) internal balances;
     /* This creates an array with all seats */
     mapping (uint => Seat) internal seats;
+    
+    event SetMinter(address _owner);
+    event Transfer(address dst, uint96 amount);
+    event InductedIntoHOF(string _name, string _info, uint code);
+    event ChangeSeatInfoByCode(uint _code, string _name, string _info);
+    event ChangeSeatOwnerByCode(uint _code, address _owner);
+    
     /* Initializes contract with initial supply tokens to the creator of the contract */
     constructor () public {
         balances[msg.sender] = totalSupply;// Give the creator all initial tokens
@@ -36,6 +43,7 @@ contract NHOF {
     function setMinter(address _owner) external {
         require(msg.sender == owner, "NHOF::setMinter: only the owner can change the owneraddress");
         owner = _owner;
+        emit SetMinter(_owner);
     }
     
     /**
@@ -49,6 +57,7 @@ contract NHOF {
         require(amount > 0, "amount must be greater than 0.");
         require(balances[msg.sender] > amount, "sender has not enough balance."); // Check if the sender has enough
         _transferTokens(msg.sender, dst, amount);
+        emit Transfer(dst, amount);
         return true;
     }
     
@@ -61,6 +70,7 @@ contract NHOF {
         code = code + 1;
         seats[code] = Seat(_name, msg.sender, code, _info);
         balances[msg.sender] = sub96(balances[msg.sender], fee, "NHOF::inductedIntoHOF: transfer amount exceeds balance");
+        emit InductedIntoHOF(_name, _info, code);
         return code;
     }
     
@@ -71,6 +81,7 @@ contract NHOF {
         require(s.owner == msg.sender, "Insufficient permissions.");
         seats[_code].name = _name;
         seats[_code].info = _info;
+        emit ChangeSeatInfoByCode(_code, _name, _info);
         return true;
     }
     
@@ -78,6 +89,7 @@ contract NHOF {
         Seat memory s = seats[_code];
         require(s.owner == msg.sender, "Insufficient permissions.");
         seats[_code].owner = _owner;
+        emit ChangeSeatOwnerByCode(_code, _owner);
         return true;
     }
     
@@ -113,7 +125,7 @@ contract NHOF {
     }
     
     function _getTotalSeats() internal view returns (uint) {
-        return block.number / 5;
+        return (block.number - 36) / 1e4;
     }
     
     function safe96(uint n, string memory errorMessage) internal pure returns (uint96) {
