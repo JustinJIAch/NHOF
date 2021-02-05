@@ -34,7 +34,7 @@ contract NHOF {
         balances[msg.sender] = totalSupply;// Give the creator all initial tokens
 		owner = msg.sender;
 		code = 0;
-		seats[0] = Seat("Pangu", owner, 0, "Pangu breaks the ground.");
+		seats[0] = Seat("Pangu", address(0), 0, "Pangu breaks the ground.");
     }
     /**
      * @notice Change the owner address  inducted into Hall of Fame

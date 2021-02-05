@@ -430,10 +430,10 @@
 	},
 	"sources": {
 		"localhost/NewHallOfFame.sol": {
-			"keccak256": "0xbc8642fda113b19a21bda894139cc0336ae23cc0a86f46f1c51c7536d348f065",
+			"keccak256": "0x86afc12f729a90738f3589fd3d615c8cd2867f9e92ee4d52aa73e3266bbea840",
 			"urls": [
-				"bzz-raw://b372297f374d659585ca1d1db0fc60f3f2d65b57718541543446a8284d1f9473",
-				"dweb:/ipfs/QmRR3ELocKFVmuYxE7Vjms9oRtkBt9ocRkprBXttMoZD36"
+				"bzz-raw://e9e8cd363d1e7b92f16305836d42023b8ccd429234ac7e83a9206727cb3aa72e",
+				"dweb:/ipfs/QmaSCJAFDCFBJGQ4Eios8hb341ScuqHMsXsU4AdWgLKtMk"
 			]
 		}
 	},
